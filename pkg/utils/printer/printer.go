@@ -1,9 +1,12 @@
 package printer
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
-func PrintToCli(number int, message string) {
+func PrintToCli(number int, result int) {
 	fmt.Println("> Problem: ", number)
-	fmt.Println(message)
+	fmt.Println(strconv.Itoa(result))
 	fmt.Println()
 }

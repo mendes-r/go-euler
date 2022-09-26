@@ -1,8 +1,6 @@
 package problem0001
 
 import (
-	"strconv"
-
 	"github.com/mendes-r/go-euler/pkg/utils/printer"
 )
 
@@ -17,5 +15,5 @@ func Solution() {
 		}
 	}
 
-	printer.PrintToCli(1, strconv.Itoa(result))
+	printer.PrintToCli(1, result)
 }
