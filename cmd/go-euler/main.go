@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/mendes-r/go-euler/pkg/utils/printer"
+	"github.com/mendes-r/go-euler/cmd/go-euler/problem0001"
 )
 
 func main() {
-	printer.PrintToCli("Hello world")
+	problem0001.Solution()
 }
