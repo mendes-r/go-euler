@@ -1,5 +1,8 @@
 package problem0002
 
+// By considering the terms in the Fibonacci sequence whose values do not exceed four million,
+// find the sum of the even-valued terms.
+
 func Solution(input float64) (int, float64) {
 	result := 0
 	previous := 1

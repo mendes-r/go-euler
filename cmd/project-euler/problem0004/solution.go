@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+// Find the largest palindrome made from the product of two 3-digit numbers.
+
 func Solution(input float64) (int, float64) {
 	result := 0
 	limit := input // 999

@@ -6,6 +6,8 @@ import (
 
 var primes []int = []int{2}
 
+// What is the largest prime factor of the number 600851475143 ?
+
 func Solution(input float64) (int, float64) {
 	result := 0
 	limit := int(input) // 600851475143
