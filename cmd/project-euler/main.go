@@ -11,6 +11,7 @@ import (
 	"github.com/mendes-r/go-euler/cmd/project-euler/problem0004"
 	"github.com/mendes-r/go-euler/cmd/project-euler/problem0005"
 	"github.com/mendes-r/go-euler/cmd/project-euler/problem0006"
+	"github.com/mendes-r/go-euler/cmd/project-euler/problem0007"
 )
 
 type problem interface {
@@ -32,6 +33,7 @@ func (p problem1input) printSolution() {
 		number, result := p.solution(input)
 		duration := time.Since(start)
 		printer.PrintToCli(number, input, result, duration.String())
+		printer.PrintToFile(number, input, result, duration.String())
 	}
 }
 
@@ -41,11 +43,13 @@ func main() {
 	p0003 := problem1input{600851475143, problem0003.Solution, false}
 	p0004 := problem1input{999, problem0004.Solution, false}
 	p0005 := problem1input{20, problem0005.Solution, false}
-	p0006 := problem1input{100, problem0006.Solution, true}
+	p0006 := problem1input{100, problem0006.Solution, false}
+	p0007 := problem1input{10001, problem0007.Solution, true}
 
-	problems := []problem{p0001, p0002, p0003, p0004, p0005, p0006}
+	problems := []problem{p0001, p0002, p0003, p0004, p0005, p0006, p0007}
 
 	for _, problem := range problems {
 		problem.printSolution()
 	}
+
 }
