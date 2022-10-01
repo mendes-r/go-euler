@@ -2,15 +2,13 @@ package problem0003
 
 import (
 	"math"
-
-	"github.com/mendes-r/go-euler/pkg/utils/printer"
 )
 
 var primes []int = []int{2}
 
-func Solution() {
+func Solution(input float64) (int, float64) {
 	result := 0
-	limit := 600851475143
+	limit := int(input) // 600851475143
 	count := int(math.Sqrt(float64(limit)))
 
 	for number := 3; number < count; number++ {
@@ -19,7 +17,7 @@ func Solution() {
 		}
 	}
 
-	printer.PrintToCli(3, result)
+	return 3, float64(result)
 }
 
 func isPrime(number int) bool {

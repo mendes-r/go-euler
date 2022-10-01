@@ -5,8 +5,12 @@ import (
 	"strconv"
 )
 
-func PrintToCli(number int, result int) {
+func PrintToCli(number int, input float64, result float64) {
 	fmt.Println("> Problem: ", number)
-	fmt.Println(strconv.Itoa(result))
+	i := strconv.FormatFloat(input, 'f', -1, 64)
+	fmt.Println(">    input: ", i)
+	s := strconv.FormatFloat(result, 'f', -1, 64)
+	fmt.Println(">    solution: ", s)
+	fmt.Println(".............")
 	fmt.Println()
 }
