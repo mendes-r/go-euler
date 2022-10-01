@@ -9,6 +9,7 @@ import (
 	"github.com/mendes-r/go-euler/cmd/project-euler/problem0002"
 	"github.com/mendes-r/go-euler/cmd/project-euler/problem0003"
 	"github.com/mendes-r/go-euler/cmd/project-euler/problem0004"
+	"github.com/mendes-r/go-euler/cmd/project-euler/problem0005"
 )
 
 type problem interface {
@@ -37,9 +38,10 @@ func main() {
 	p0001 := problem1input{1000, problem0001.Solution, false}
 	p0002 := problem1input{4000000, problem0002.Solution, false}
 	p0003 := problem1input{600851475143, problem0003.Solution, false}
-	p0004 := problem1input{999, problem0004.Solution, true}
+	p0004 := problem1input{999, problem0004.Solution, false}
+	p0005 := problem1input{20, problem0005.Solution, true}
 
-	problems := []problem{p0001, p0002, p0003, p0004}
+	problems := []problem{p0001, p0002, p0003, p0004, p0005}
 
 	for _, problem := range problems {
 		problem.printSolution()
