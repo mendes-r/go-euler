@@ -1,7 +1,6 @@
 package problem0004
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -9,15 +8,12 @@ import (
 
 func Solution(input float64) (int, float64) {
 	result := 0
-	limit := input // 999
+	limit := int(input) // 999
 
 	for i := limit; i > 0; i-- {
 		for j := limit; j > 0; j-- {
 			temp := i * j
 			if isPalindrome(temp) {
-
-				fmt.Println("Found ", temp, i, j)
-
 				if temp > result {
 					result = temp
 				}
@@ -30,25 +26,37 @@ func Solution(input float64) (int, float64) {
 }
 
 func isPalindrome(number int) bool {
-	length := int(math.Log10(float64(number)) + 1)
+	length := numbersLength(number)
 	flag := false
+	position := 1
 
 	if length > 1 {
-		base := 10
 		flag = true
-		up := int(length / 2)
-		down := 1
 
-		for flag && up > down {
-			first := "placeholder"
-			last := "placeholder"
-			flag = (first == last)
+		for flag && position <= int(length/2) {
+			rightDigit := getRightDigit(number, position)
+			leftDigit := getLeftDigit(number, length-position)
+			flag = (rightDigit == leftDigit)
 
-			fmt.Println()
-			up--
-			down++
+			position++
 		}
 	}
 
 	return flag
+}
+
+func numbersLength(number int) int {
+	return int(math.Log10(float64(number)) + 1)
+}
+
+func getLeftDigit(number int, position int) int {
+	power := math.Pow10(position)
+	digit := number / int(power)
+	return digit % 10
+}
+
+func getRightDigit(number int, position int) int {
+	power := math.Pow10(position)
+	digit := number % int(power)
+	return digit / (int(power / 10))
 }
