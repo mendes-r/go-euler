@@ -12,6 +12,7 @@ import (
 	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0005"
 	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0006"
 	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0007"
+	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0008"
 )
 
 type problem interface {
@@ -37,6 +38,10 @@ func Run(first int, last int) {
 	problems := getProblems()
 	size := len(problems)
 
+	if last == -1 {
+		last = first
+	}
+
 	for i := first; i <= last && i <= size; i++ {
 		problems[i-1].runSolution()
 	}
@@ -52,7 +57,7 @@ func getProblems() []problem {
 	p0005 := aProblem{problem0005.Solution}
 	p0006 := aProblem{problem0006.Solution}
 	p0007 := aProblem{problem0007.Solution}
-	// p0008 := aProblem{problem0008.Solution}
+	p0008 := aProblem{problem0008.Solution}
 
-	return []problem{p0001, p0002, p0003, p0004, p0005, p0006, p0007}
+	return []problem{p0001, p0002, p0003, p0004, p0005, p0006, p0007, p0008}
 }

@@ -1,4 +1,4 @@
-package file
+package reader
 
 import (
 	"bufio"
@@ -7,15 +7,14 @@ import (
 	"os"
 )
 
-func ToSlice(path string) []float64 {
+func File2Slice(path string) []string {
+
 	file, err := os.Open(path)
-	if err != nil {
-		panic("foo")
-	}
+	check(err)
 	defer file.Close()
 
 	reader := bufio.NewReader(file)
-	result := []float64{}
+	result := []string{}
 
 	for {
 		if c, sz, err := reader.ReadRune(); err != nil {
@@ -24,9 +23,15 @@ func ToSlice(path string) []float64 {
 			}
 			log.Fatal(c, sz, err)
 		} else {
-			result = append(result, float64(c))
+			result = append(result, string(c))
 		}
 	}
 
 	return result
+}
+
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
 }

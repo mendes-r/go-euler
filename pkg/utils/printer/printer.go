@@ -10,7 +10,7 @@ import (
 
 func PrintToCli(number int, description string, result float64, duration string) {
 	fmt.Println("> Problem: ", number)
-	fmt.Println("> description: ", description)
+	fmt.Println("> Description: ", description)
 	s := strconv.FormatFloat(result, 'f', -1, 64)
 	fmt.Println(">    solution: ", s)
 	fmt.Println(">    duration: ", duration)

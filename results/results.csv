@@ -5,3 +5,4 @@
 2022-10-05 10:57:28.212437 +0100 WEST m=+6.905337527, 5, 232792560, 895.11085ms, What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 2022-10-05 10:57:28.233817 +0100 WEST m=+6.926718418, 6, 25164150, 13.828µs, Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 2022-10-05 10:57:28.436737 +0100 WEST m=+7.129644555, 7, 104743, 183.585453ms, What is the 10 001st prime number?
+2022-10-05 12:41:31.345883 +0100 WEST m=+0.002035987, 8, 23514624000, 1.422004ms, Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
