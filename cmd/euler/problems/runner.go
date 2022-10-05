@@ -13,6 +13,7 @@ import (
 	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0006"
 	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0007"
 	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0008"
+	"github.com/mendes-r/go-euler/cmd/euler/problems/problem0009"
 )
 
 type problem interface {
@@ -58,6 +59,7 @@ func getProblems() []problem {
 	p0006 := aProblem{problem0006.Solution}
 	p0007 := aProblem{problem0007.Solution}
 	p0008 := aProblem{problem0008.Solution}
+	p0009 := aProblem{problem0009.Solution}
 
-	return []problem{p0001, p0002, p0003, p0004, p0005, p0006, p0007, p0008}
+	return []problem{p0001, p0002, p0003, p0004, p0005, p0006, p0007, p0008, p0009}
 }
