@@ -1,12 +1,12 @@
 package problem0007
 
-// What is the 10 001st prime number?
+func Solution() (int, string, float64) {
+	description := "What is the 10 001st prime number?"
+	limit := 10001
 
-func Solution(input float64) (int, float64) {
 	primes := []int{2}
 	count := 1
 	number := 3
-	limit := int(input)
 
 	for count < limit {
 		if isPrime(number, primes) {
@@ -16,7 +16,7 @@ func Solution(input float64) (int, float64) {
 		number++
 	}
 
-	return 7, float64(primes[len(primes)-1])
+	return 7, description, float64(primes[len(primes)-1])
 }
 
 func isPrime(number int, primes []int) bool {

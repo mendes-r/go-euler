@@ -8,10 +8,9 @@ import (
 	"time"
 )
 
-func PrintToCli(number int, input float64, result float64, duration string) {
+func PrintToCli(number int, description string, result float64, duration string) {
 	fmt.Println("> Problem: ", number)
-	i := strconv.FormatFloat(input, 'f', -1, 64)
-	fmt.Println(">    input: ", i)
+	fmt.Println("> description: ", description)
 	s := strconv.FormatFloat(result, 'f', -1, 64)
 	fmt.Println(">    solution: ", s)
 	fmt.Println(">    duration: ", duration)
@@ -19,7 +18,7 @@ func PrintToCli(number int, input float64, result float64, duration string) {
 	fmt.Println()
 }
 
-func PrintToFile(number int, input float64, result float64, duration string) {
+func PrintToFile(number int, description string, result float64, duration string) {
 	f, err := os.OpenFile("results/results.csv", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
 	check(err)
 
@@ -28,9 +27,10 @@ func PrintToFile(number int, input float64, result float64, duration string) {
 
 	sb.Write([]byte(time.Now().String() + ", "))
 	sb.Write([]byte(strconv.Itoa(number) + ", "))
-	sb.Write([]byte(strconv.FormatFloat(input, 'f', -1, 64) + ", "))
 	sb.Write([]byte(strconv.FormatFloat(result, 'f', -1, 64) + ", "))
-	sb.Write([]byte(duration + "\n"))
+	sb.Write([]byte(duration + ", "))
+	description = strings.Replace(description, ",", "", -1)
+	sb.Write([]byte(description + "\n"))
 
 	f.WriteString(sb.String())
 

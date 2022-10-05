@@ -1,10 +1,10 @@
 package problem0001
 
-// Find the sum of all the multiples of 3 or 5 below 1000.
+func Solution() (int, string, float64) {
+	description := "Find the sum of all the multiples of 3 or 5 below 1000."
+	limit := 1000
 
-func Solution(input float64) (int, float64) {
 	result := 3
-	limit := int(input) // 1000
 
 	for count := 4; count < limit; count++ {
 		if count%3 == 0 {
@@ -14,5 +14,5 @@ func Solution(input float64) (int, float64) {
 		}
 	}
 
-	return 1, float64(result)
+	return 1, description, float64(result)
 }

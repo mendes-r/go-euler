@@ -1,12 +1,16 @@
 package problem0006
 
-import "math"
+import (
+	"math"
+)
 
-// Find the difference between the sum of the squares of the first one hundred natural numbers
-// and the square of the sum.
+func Solution() (int, string, float64) {
+	description := "Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum."
+	limit := 100
 
-func Solution(input float64) (int, float64) {
-	return 6, math.Abs(sumOfSquares(input) - squareOfSums(input))
+	result := math.Abs(sumOfSquares(float64(limit)) - squareOfSums(float64(limit)))
+
+	return 6, description, result
 }
 
 func sumOfSquares(input float64) float64 {

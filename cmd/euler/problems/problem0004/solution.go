@@ -4,11 +4,11 @@ import (
 	"math"
 )
 
-// Find the largest palindrome made from the product of two 3-digit numbers.
+func Solution() (int, string, float64) {
+	description := "Find the largest palindrome made from the product of two 3-digit numbers."
+	limit := 999
 
-func Solution(input float64) (int, float64) {
 	result := 0
-	limit := int(input) // 999
 
 	for i := limit; i > 0; i-- {
 		for j := limit; j > 0; j-- {
@@ -22,7 +22,7 @@ func Solution(input float64) (int, float64) {
 		limit--
 	}
 
-	return 4, float64(result)
+	return 4, description, float64(result)
 }
 
 func isPalindrome(number int) bool {
