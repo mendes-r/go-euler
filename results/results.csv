@@ -8,3 +8,4 @@ date, problem, result, duration, description
 2022-10-05 10:57:28.436737 +0100 WEST m=+7.129644555, 7, 104743, 183.585453ms, What is the 10 001st prime number?
 2022-10-05 12:41:31.345883 +0100 WEST m=+0.002035987, 8, 23514624000, 1.422004ms, Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 2022-10-05 14:59:12.06946 +0100 WEST m=+0.001819084, 9, 31875000, 1.502224ms, There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc.
+2022-10-08 22:12:13.141105 +0100 WEST m=+42.753408309, 10, 142913828922, 42.752832531s, Find the sum of all the primes below two million.
